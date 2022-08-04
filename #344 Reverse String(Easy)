@@ -1,0 +1,29 @@
+#1
+class Solution(object):
+    def reverseString(self, s):
+        i = 0
+        while i < len(s)//2:
+            a = s[i]
+            b = s[len(s)-i-1]
+            c = a
+            a = b
+            b = c
+            s[i] = a
+            s[len(s)-i-1] = b
+            i += 1
+        return s
+###############################
+
+#2
+class Solution(object):
+    def reverseString(self, s):
+        s1 = []
+        for elem in s:
+            s1.append(elem)
+        
+        i = 0
+        while s1:
+            s[i] = s1.pop()
+            i += 1
+        
+        return s
