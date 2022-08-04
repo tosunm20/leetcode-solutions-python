@@ -1,0 +1,10 @@
+class Solution(object):
+    def maxProfit(self, prices):
+        
+        currentMax = 0
+        myResult = 0
+        for i in range(1,len(prices)):
+            currentMax = max(currentMax+(prices[i]-prices[i-1]),0)
+            myResult = max(myResult,currentMax)
+        
+        return myResult
