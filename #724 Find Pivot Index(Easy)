@@ -1,0 +1,13 @@
+class Solution(object):
+    def pivotIndex(self, nums):
+        totalSum = sum(nums)
+        l = 0
+        
+        for i in range(len(nums)):
+            r = totalSum - l - nums[i]
+            
+            if l == r:
+                return i
+            l += nums[i]
+        
+        return -1
