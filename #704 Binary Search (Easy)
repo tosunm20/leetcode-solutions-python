@@ -1,0 +1,15 @@
+class Solution(object):
+    def search(self, nums, target):
+        begin_index = 0
+        end_index = len(nums) - 1
+        while begin_index <= end_index:
+            midpoint = begin_index + (end_index - begin_index) // 2
+            midpointValue = nums[midpoint]
+                
+            if midpointValue == target:
+                return midpoint
+            elif midpointValue < target:
+                begin_index = midpoint + 1
+            elif midpointValue > target:
+                end_index = midpoint - 1
+        return -1
