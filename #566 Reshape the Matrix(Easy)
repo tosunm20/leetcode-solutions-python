@@ -1,0 +1,19 @@
+class Solution(object):
+    def matrixReshape(self, mat, r, c):
+        myRow, myCol = len(mat[0]), len(mat)
+        
+        if r*c != myRow * myCol: return mat
+        
+        myOutput = [[0 for x in range(c)] for x in range(r)]
+        myList = []
+        for i in range(myCol):
+            for j in range(myRow):
+                myList.append(mat[i][j])
+                
+        k = 0
+        for i in range(r):
+            for j in range(c):
+                myOutput[i][j] = myList[k]
+                k += 1
+        
+        return myOutput
