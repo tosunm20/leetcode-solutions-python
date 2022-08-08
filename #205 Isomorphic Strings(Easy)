@@ -1,0 +1,15 @@
+class Solution(object):
+    def isIsomorphic(self, s, t):
+        
+        def myProg(word):
+            myOutput = []
+            myDict = {}
+            i = 1
+            for char in word:
+                if char not in myDict:
+                    myDict[char] = i
+                    i += 1
+                myOutput.append(myDict[char])
+            return myOutput
+        
+        return myProg(s) == myProg(t)
