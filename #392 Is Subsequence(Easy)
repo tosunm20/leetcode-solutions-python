@@ -1,0 +1,10 @@
+class Solution(object):
+    def isSubsequence(self, s, t):
+        
+        s1 = list(s)
+        
+        for char in t:
+            if (s1 and s1[0]) == char:
+                s1.pop(0)
+        
+        return s1 == []
